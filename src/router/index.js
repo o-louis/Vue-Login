@@ -23,6 +23,12 @@ const routes = [
       store.state.user.isLoggedIn ? next() : next("/");
     },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    beforeEnter: (to, from, next) => {
+      next("/");
+    },
+  },
 ];
 
 const router = createRouter({
