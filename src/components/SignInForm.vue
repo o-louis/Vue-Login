@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="onSubmit()"
-    class="max-w-xs p-4 text-black bg-white rounded-md"
+    class="w-full max-w-xs p-4 bg-white rounded-md text-darkBlue h-72"
   >
     <label for="username" class="flex flex-col"
       >Username
@@ -9,7 +9,7 @@
         type="text"
         name="username"
         placeholder="Enter your username..."
-        class="pl-3 mt-1 border border-gray-300"
+        class="py-2 pl-3 mt-1 border border-gray-200 rounded-lg"
         v-model="username"
       />
     </label>
@@ -20,7 +20,7 @@
         type="password"
         name="password"
         placeholder="Enter your password..."
-        class="pl-3 mt-1 border border-gray-300"
+        class="py-2 pl-3 mt-1 border border-gray-200 rounded-lg"
         v-model="password"
       />
     </label>

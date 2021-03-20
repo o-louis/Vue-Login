@@ -1,10 +1,8 @@
 <template>
   <main
-    class="w-full max-w-screen-lg m-auto mt-10 text-lg leading-relaxed text-white"
+    class="flex flex-col items-center w-full max-w-screen-lg m-auto mt-10 text-lg leading-relaxed text-white"
   >
-    <h1 class="mb-4 text-2xl font-bold uppercase text-pink">
-      Sign In to get a surprise
-    </h1>
+    <h1 class="mb-4 text-2xl font-bold uppercase text-pink">Sign In</h1>
     <SignInForm @onSubmit="redirectToAccount" />
   </main>
 </template>
