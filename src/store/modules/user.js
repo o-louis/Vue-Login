@@ -5,14 +5,14 @@ const state = {
 const getters = {};
 
 const mutations = {
-  SIGN_IN(state) {
-    state.isLoggedIn = !state.isLoggedIn;
+  AUTHENTICATION(state) {
+    state.isLoggedIn = true;
   },
 };
 
 const actions = {
-  signIn(context) {
-    context.commit("SIGN_IN");
+  authentication(context) {
+    context.commit("AUTHENTICATION");
   },
 };
 
