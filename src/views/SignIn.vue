@@ -5,18 +5,18 @@
     <h1 class="mb-4 text-2xl font-bold uppercase text-pink">
       Sign In to get a surprise
     </h1>
-    <FormSignIn @onSubmit="redirectToAccount" />
+    <SignInForm @onSubmit="redirectToAccount" />
   </main>
 </template>
 
 <script>
-import FormSignIn from "@/components/FormSignIn.vue";
+import SignInForm from "@/components/SignInForm.vue";
 import router from "@/router";
 
 import { useStore } from "vuex";
 
 export default {
-  components: { FormSignIn },
+  components: { SignInForm },
   setup() {
     const store = useStore();
 

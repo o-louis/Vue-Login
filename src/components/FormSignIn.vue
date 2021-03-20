@@ -38,7 +38,7 @@
 import { ref } from "vue";
 
 export default {
-  name: "FormSignIn",
+  name: "SignInForm",
   props: {
     error: Boolean,
   },
