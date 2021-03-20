@@ -17,18 +17,14 @@
       <h2 class="mb-4 text-2xl font-bold uppercase text-pink">
         What to do next ?
       </h2>
-      <p>
-        You have two posibilities either you access to your account or you sign
-        in.
-      </p>
-      <p class="text-sm italic">A Surprise wait for you if you sign in.</p>
+      <p>You can {{ action }} to your account.</p>
       <ul class="mt-4 text-lg font-bold">
-        <li>
+        <li v-if="action === 'sign in'">
           <router-link to="/signin" class="hover:underline"
             >➡Sign In</router-link
           >
         </li>
-        <li>
+        <li v-else>
           <router-link to="/account" class="hover:underline"
             >➡Your Account</router-link
           >
@@ -39,5 +35,18 @@
 </template>
 
 <script>
-export default {};
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+export default {
+  name: "Home",
+  setup() {
+    const store = useStore();
+    return {
+      action: computed(() =>
+        store.state.user.isLoggedIn ? "access" : "sign in"
+      ),
+    };
+  },
+};
 </script>
