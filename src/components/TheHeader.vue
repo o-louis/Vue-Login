@@ -1,6 +1,6 @@
 <template>
   <header
-    class="w-full max-w-screen-lg py-5 m-auto text-3xl font-bold text-white"
+    class="w-full max-w-screen-lg py-5 m-auto text-xl font-bold text-white"
   >
     <router-link :to="home">{{ title }}</router-link>
   </header>
