@@ -6,7 +6,8 @@
       </h1>
       <p>
         VueLogin is an example of a Vue Project with
-        <a href="https://vitejs.dev/" class="underline"><strong>Vite</strong></a
+        <a href="https://vitejs.dev/" target="_blank" class="underline"
+          ><strong>Vite</strong></a
         >⚡, a crazy build tool no-bundle.
       </p>
       <p>I played around with Vuex, Vue-router, Composition API.</p>
