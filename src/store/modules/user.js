@@ -12,11 +12,21 @@ const mutations = {
     state.password = payload.password;
     state.isLoggedIn = true;
   },
+
+  LOG_OUT(state) {
+    state.name = "";
+    state.password = "";
+    state.isLoggedIn = false;
+  },
 };
 
 const actions = {
   authentication(context, user) {
     context.commit("AUTHENTICATION", user);
+  },
+
+  logout(context) {
+    context.commit("LOG_OUT");
   },
 };
 
