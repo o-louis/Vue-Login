@@ -24,13 +24,13 @@
       <p class="text-sm italic">A Surprise wait for you if you sign in.</p>
       <ul class="mt-4 text-lg font-bold">
         <li>
-          <router-link to="/account" class="hover:underline"
-            >➡Your Account</router-link
+          <router-link to="/signin" class="hover:underline"
+            >➡Sign In</router-link
           >
         </li>
         <li>
-          <router-link to="/signin" class="hover:underline"
-            >➡Sign In</router-link
+          <router-link to="/account" class="hover:underline"
+            >➡Your Account</router-link
           >
         </li>
       </ul>
