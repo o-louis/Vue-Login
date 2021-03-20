@@ -20,9 +20,9 @@ export default {
   setup() {
     const store = useStore();
 
-    const redirectToAccount = () => {
-      store.dispatch("user/authentication");
-      router.push({ name: "Home" });
+    const redirectToAccount = (user) => {
+      store.dispatch("user/authentication", user);
+      router.push({ name: "UserAccount" });
     };
 
     return {
