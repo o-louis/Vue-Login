@@ -2,12 +2,22 @@
   <main
     class="flex flex-col w-full max-w-screen-lg m-auto mt-10 text-lg leading-relaxed text-white"
   >
-    <button
-      class="px-4 py-2 ml-auto font-bold text-white rounded-md bg-pink hover:opacity-90"
-      @click="logout()"
-    >
-      Log out
-    </button>
+    <div class="flex">
+      <button>
+        <router-link
+          to="Home"
+          class="px-4 py-2 font-bold text-white hover:underline"
+        >
+          ← Back
+        </router-link>
+      </button>
+      <button
+        class="px-4 py-2 ml-auto font-bold text-white rounded-md bg-pink hover:opacity-90"
+        @click="logout()"
+      >
+        Log out
+      </button>
+    </div>
     <h1 class="mt-10 mb-4 text-2xl font-bold">Hello {{ name }} 🤙</h1>
     <p>You are now connected ! Congrats !</p>
     <div v-if="gif" class="self-center mt-14">
