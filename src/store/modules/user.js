@@ -23,10 +23,18 @@ const mutations = {
 const actions = {
   authentication(context, user) {
     context.commit("AUTHENTICATION", user);
+    localStorage.setItem("user", JSON.stringify(user));
   },
 
   logout(context) {
     context.commit("LOG_OUT");
+  },
+
+  checkSession(context) {
+    const user = localStorage.getItem("user");
+    if (user) {
+      context.commit("AUTHENTICATION", JSON.parse(user));
+    }
   },
 };
 
