@@ -39,9 +39,6 @@ import { ref } from "vue";
 
 export default {
   name: "SignInForm",
-  props: {
-    error: Boolean,
-  },
   setup(props, { emit }) {
     const username = ref("");
     const password = ref("");
