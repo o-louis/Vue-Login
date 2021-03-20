@@ -1,18 +1,22 @@
 const state = {
   isLoggedIn: false,
+  name: "",
+  password: "",
 };
 
 const getters = {};
 
 const mutations = {
-  AUTHENTICATION(state) {
+  AUTHENTICATION(state, payload) {
+    state.name = payload.username;
+    state.password = payload.password;
     state.isLoggedIn = true;
   },
 };
 
 const actions = {
-  authentication(context) {
-    context.commit("AUTHENTICATION");
+  authentication(context, user) {
+    context.commit("AUTHENTICATION", user);
   },
 };
 
