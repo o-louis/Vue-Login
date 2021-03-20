@@ -20,7 +20,7 @@ const routes = [
     name: "UserAccount",
     component: UserAccount,
     beforeEnter: (to, from, next) => {
-      store.state.user.isLoggedIn ? next() : next("/");
+      store.state.user.isLoggedIn ? next() : next({ name: "Home" });
     },
   },
   {
