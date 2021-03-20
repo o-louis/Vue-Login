@@ -28,6 +28,7 @@ const actions = {
 
   logout(context) {
     context.commit("LOG_OUT");
+    localStorage.removeItem("user");
   },
 
   checkSession(context) {
