@@ -14,6 +14,9 @@ const routes = [
     path: "/signin",
     name: "SignIn",
     component: SignIn,
+    beforeEnter: (to, from, next) => {
+      store.state.user.isLoggedIn ? next({ name: "UserAccount" }) : next();
+    },
   },
   {
     path: "/account",
