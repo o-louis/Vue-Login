@@ -16,6 +16,7 @@
 <script>
 import router from "@/router";
 
+import { computed } from "vue";
 import { useStore } from "vuex";
 
 export default {
@@ -28,7 +29,7 @@ export default {
     };
 
     return {
-      name: store.state.user.name,
+      name: computed(() => store.state.user.name),
       logout,
     };
   },
