@@ -36,6 +36,7 @@
       />
     </label>
     <p v-if="error">Please fill all field</p>
+    <p v-if="errorSignUp && !error" class="mt-6">{{ errorSignUp }}</p>
     <button
       type="submit"
       class="w-full py-1 mt-8 text-lg font-semibold text-white uppercase rounded-md bg-pink hover:opacity-90"
@@ -50,6 +51,9 @@ import { ref } from "vue";
 
 export default {
   name: "SignUpForm",
+  props: {
+    errorSignUp: String,
+  },
   setup(props, { emit }) {
     const username = ref("");
     const password = ref("");
@@ -64,9 +68,6 @@ export default {
           password: password.value,
           email: email.value,
         });
-        username.value = "";
-        password.value = "";
-        email.value = "";
       } else {
         error.value = true;
       }
