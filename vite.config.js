@@ -3,6 +3,8 @@ import path from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  alias: { "@": path.resolve(__dirname, "./src") },
+  resolve: {
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+  },
   plugins: [vue()],
 });
