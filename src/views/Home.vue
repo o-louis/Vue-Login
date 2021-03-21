@@ -18,11 +18,16 @@
       <h2 class="mb-4 text-2xl font-bold uppercase text-pink">
         What to do next ?
       </h2>
-      <p>You can {{ action }} to your account.</p>
+      <p>You can {{ action }}.</p>
       <ul class="mt-4 text-lg font-bold">
-        <li v-if="action === 'sign in'">
+        <li v-if="action === 'sign in or sign up'">
           <router-link to="/signin" class="hover:underline"
             >➡Sign In</router-link
+          >
+        </li>
+        <li v-if="action === 'sign in or sign up'">
+          <router-link to="/signup" class="hover:underline"
+            >➡Sign Up</router-link
           >
         </li>
         <li v-else>
@@ -45,7 +50,9 @@ export default {
     const store = useStore();
     return {
       action: computed(() =>
-        store.state.user.isLoggedIn ? "access" : "sign in"
+        store.state.user.isLoggedIn
+          ? "access to your account"
+          : "sign in or sign up"
       ),
     };
   },
