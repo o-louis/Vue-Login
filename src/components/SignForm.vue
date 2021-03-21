@@ -41,13 +41,13 @@
       type="submit"
       class="w-full py-1 mt-8 text-lg font-semibold text-white uppercase rounded-md bg-pink hover:opacity-90"
     >
-      Sign in
+      {{ btnText }}
     </button>
   </form>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export default {
   name: "SignForm",
@@ -93,6 +93,7 @@ export default {
       password,
       email,
       onSubmit,
+      btnText: computed(() => (props.type == "signup" ? "sign up" : "sign in")),
     };
   },
 };
