@@ -1,7 +1,7 @@
 const state = {
   isLoggedIn: false,
   name: "",
-  password: "",
+  users: [],
 };
 
 const getters = {};
@@ -17,6 +17,10 @@ const mutations = {
     state.name = "";
     state.password = "";
     state.isLoggedIn = false;
+  },
+
+  SET_USERS(state, payload) {
+    state.users = payload;
   },
 };
 
@@ -35,6 +39,13 @@ const actions = {
     const user = localStorage.getItem("user");
     if (user) {
       context.commit("AUTHENTICATION", JSON.parse(user));
+    }
+  },
+
+  setUsers(context) {
+    const users = localStorage.getItem("users");
+    if (users) {
+      context.commit("SET_USERS", JSON.parse(users));
     }
   },
 };

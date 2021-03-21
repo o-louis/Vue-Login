@@ -14,6 +14,7 @@ export default {
   setup() {
     const store = useStore();
     onMounted(() => store.dispatch("user/checkSession"));
+    onMounted(() => store.dispatch("user/setUsers"));
   },
 };
 </script>
