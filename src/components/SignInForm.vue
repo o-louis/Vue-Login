@@ -1,16 +1,16 @@
 <template>
   <form
     @submit.prevent="onSubmit()"
-    class="w-full max-w-xs p-4 bg-white rounded-md text-darkBlue h-72"
+    class="w-full h-auto max-w-xs p-4 bg-white rounded-md text-darkBlue"
   >
-    <label for="username" class="flex flex-col"
-      >Username
+    <label for="email" class="flex flex-col"
+      >Email
       <input
         type="text"
-        name="username"
-        placeholder="Enter your username..."
+        name="email"
+        placeholder="Enter your email..."
         class="py-2 pl-3 mt-1 border border-gray-200 rounded-lg"
-        v-model="username"
+        v-model="email"
       />
     </label>
 
@@ -24,7 +24,8 @@
         v-model="password"
       />
     </label>
-    <p v-if="error">Please fill all field</p>
+    <p v-if="error" class="mt-6">Please fill all fields</p>
+    <p v-if="errorSignIn && !error" class="mt-6">{{ errorSignIn }}</p>
     <button
       type="submit"
       class="w-full py-1 mt-8 text-lg font-semibold text-white uppercase rounded-md bg-pink hover:opacity-90"
@@ -39,27 +40,28 @@ import { ref } from "vue";
 
 export default {
   name: "SignInForm",
+  props: {
+    errorSignIn: String,
+  },
   setup(props, { emit }) {
-    const username = ref("");
+    const email = ref("");
     const password = ref("");
     const error = ref(false);
 
     const onSubmit = () => {
       error.value = false;
-      if (username.value && password.value) {
+      if (email.value && password.value) {
         emit("onSubmit", {
-          username: username.value,
+          email: email.value,
           password: password.value,
         });
-        username.value = "";
-        password.value = "";
       } else {
         error.value = true;
       }
     };
     return {
       error,
-      username,
+      email,
       password,
       onSubmit,
     };

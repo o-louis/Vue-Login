@@ -1,6 +1,7 @@
 const state = {
   isLoggedIn: false,
   name: "",
+  email: "",
   users: [],
 };
 
@@ -9,13 +10,13 @@ const getters = {};
 const mutations = {
   AUTHENTICATION(state, payload) {
     state.name = payload.username;
-    state.password = payload.password;
+    state.email = payload.email;
     state.isLoggedIn = true;
   },
 
   LOG_OUT(state) {
     state.name = "";
-    state.password = "";
+    state.email = "";
     state.isLoggedIn = false;
   },
 
