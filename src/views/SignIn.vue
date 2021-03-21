@@ -21,7 +21,7 @@ export default {
     const errorSignIn = ref("");
 
     const redirectToAccount = (user) => {
-      const foundUser = store.state.user.users.find(
+      const foundUser = store.state.user.users?.find(
         (item) => item.email === user.email && item.password === user.password
       );
 
