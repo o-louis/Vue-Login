@@ -49,6 +49,12 @@ const actions = {
       context.commit("SET_USERS", JSON.parse(users));
     }
   },
+
+  addUser({ commit, state }, user) {
+    const users = [...state.users, user];
+    localStorage.setItem("users", JSON.stringify(users));
+    commit("SET_USERS", users);
+  },
 };
 
 export default {
