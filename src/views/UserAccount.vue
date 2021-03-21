@@ -35,7 +35,7 @@ import { useStore } from "vuex";
 const GIPHY = {
   baseURL: "https://api.giphy.com/v1/gifs/",
   apiKey: import.meta.env.VITE_GIPHY_API_KEY,
-  tag: "welcome",
+  tag: "hello",
   type: "random",
 };
 
